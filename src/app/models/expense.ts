@@ -4,6 +4,6 @@ export class Expense {
     id = 0;
     name = "";
     value = 0;
-    dateTime = new Date();
+    dateTime = "";  
     category = Category.Fun;
 }

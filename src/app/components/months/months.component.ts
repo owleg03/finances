@@ -21,13 +21,18 @@ export class MonthsComponent {
 
   monthsFromExpenses(expenses: Expense[]): MonthTotal[] {
     let monthsTotal: MonthTotal[] = [];
+    console.log(expenses);
 
     // Calculate total expenses for each month
     for (let expense of expenses) {
-      let monthTotal = monthsTotal.find(m => m.month == expense.dateTime.getMonth());
+      let date = new Date(expense.dateTime);
+      let yearNumber = date.getFullYear();
+      let monthNumber = date.getMonth();
+      let month = new Date(yearNumber, monthNumber);
+      let monthTotal = monthsTotal.find(m => m.month.getTime() === month.getTime());
       if (monthTotal == null) {
         monthTotal = new MonthTotal();
-        monthTotal.month = expense.dateTime.getMonth();
+        monthTotal.month = month;
         monthsTotal.push(monthTotal);
       }
       monthTotal.value += expense.value;

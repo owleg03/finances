@@ -1,5 +1,5 @@
 export class MonthTotal {
-    month = 0;
+    month: Date = new Date();
     value = 0;
     percent = 0;
 }

@@ -9,7 +9,9 @@
         <label for="category" class="pt-3">
             Category
         </label>
-        <input id="category" class="form-control mt-1" type="text" formControlName="category"/>
+        <select id="category" class="form-select mt-1" formControlName="category">
+            <option *ngFor="let type of categories" [ngValue]="type">{{ categoryEnum[type] }}</option>
+        </select>
     </div>
     <button class="btn btn-primary mt-3" type="submit">Change category</button>
 </form>

@@ -13,6 +13,8 @@ export class EditExpenseComponent {
   id = 0;
   category = Category.Fun;
   expense = new Expense();
+  categories = [Category.Clothes, Category.Food, Category.Fun, Category.Office, Category.Tech, Category.Transportation];
+  categoryEnum = Category;
 
   form = this.formBuilder.group({
     id: [0, Validators.required],
