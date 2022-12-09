@@ -1,0 +1,16 @@
+<h4>Categories</h4>
+
+<table class="table mt-4">
+    <thead>
+        <th>Category</th>
+        <th>Value</th>
+        <th>Percentage</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let categoryTotal of categoriesTotal">
+            <td>{{ category[categoryTotal.category] }}</td>
+            <td>{{ categoryTotal.value | number: '0.2-2' }}</td>
+            <td>{{ categoryTotal.percent | number: '0.2-2' }}%</td>
+        </tr>
+    </tbody>
+</table>

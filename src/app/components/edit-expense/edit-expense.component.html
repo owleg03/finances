@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="edit()">
+    <div>
+        <label for="id">
+            Id
+        </label>
+        <input id="id" class="form-control mt-1" type="text" formControlName="id"/>
+    </div>
+    <div>
+        <label for="category" class="pt-3">
+            Category
+        </label>
+        <input id="category" class="form-control mt-1" type="text" formControlName="category"/>
+    </div>
+    <button class="btn btn-primary mt-3" type="submit">Change category</button>
+</form>
